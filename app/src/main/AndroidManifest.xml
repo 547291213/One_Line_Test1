@@ -24,6 +24,7 @@
         <activity android:name=".RecyclerViewActivity"></activity>
         <activity android:name=".NewsContentActivity"></activity>
         <activity android:name=".NewstTiltleActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

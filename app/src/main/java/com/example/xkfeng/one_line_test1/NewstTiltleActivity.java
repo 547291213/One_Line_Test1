@@ -21,7 +21,7 @@ public class NewstTiltleActivity extends BaseActivity {
        3 TitleFragment以及部署文件 分别列出两个同名的布局文件layout-sw600dp
        4 TitleFragment中需要判断是不是两页，boolean isTwoPane
        5 如果是两页则直接更换内容，一页则需要另外启动Activity
-       
+
      */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -66,12 +66,31 @@
             android:layout_height="50dp">
 
         </FrameLayout>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="VisualFragment"
-            android:text="多页"
-            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="VisualFragment"
+                android:text="多页"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="广播"
+                android:onClick="BroadClick"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="退出"
+                android:onClick="ExitClick"
+                />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

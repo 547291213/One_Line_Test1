@@ -2,15 +2,20 @@ package com.example.xkfeng.one_line_test1;
 
 import android.Manifest;
 import android.app.Fragment;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.example.xkfeng.one_line_test1.Fragment.TestFragment;
 import com.example.xkfeng.one_line_test1.Fragment.TestFragment1;
@@ -24,6 +29,8 @@ public class MainActivity extends BaseActivity {
     private TestFragment fragment ;
     private TestFragment1 fragment1 ;
     private boolean frag_state = true ;
+    private MyBroadCast myBroadCast ;
+    private LocalBroadcastManager localBroadcastManager ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +48,13 @@ public class MainActivity extends BaseActivity {
         fragmentTransaction.commit() ;
 
         Log.e(TAG , "Main onCreate") ;
+
+        localBroadcastManager = LocalBroadcastManager.getInstance(this) ;
+        myBroadCast = new MyBroadCast() ;
+        IntentFilter intentFilter = new IntentFilter() ;
+        intentFilter.addAction("com.xkfeng.BroadCast.myBroadCast");
+        //localBroadcastManager.registerReceiver(myBroadCast , intentFilter);
+        registerReceiver(myBroadCast , intentFilter) ;
     }
 
     @Override
@@ -76,6 +90,12 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (myBroadCast != null)
+        {
+            unregisterReceiver(myBroadCast);
+            myBroadCast = null ;
+        }
+        removeActivity(this);
         Log.e(TAG , "Main onDestory") ;
     }
 
@@ -134,6 +154,20 @@ public class MainActivity extends BaseActivity {
         startActivity(intent);
     }
 
+    public void BroadClick(View view)
+    {
+        Intent intent = new Intent("com.xkfeng.BroadCast.myBroadCast") ;
+        sendBroadcast(intent);
+
+        //localBroadcastManager.sendBroadcast(intent) ;
+    }
+
+    public void ExitClick(View view)
+    {
+        Intent intent = new Intent("com.xkfeng.FORCE_OFF_LINE") ;
+        sendBroadcast(intent);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -151,6 +185,14 @@ public class MainActivity extends BaseActivity {
             default:
                 Log.i(TAG , "沒有對應的參數" ) ;
                 break;
+        }
+    }
+
+    public class MyBroadCast extends BroadcastReceiver
+    {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(MainActivity.this , "接收到了广播" , Toast.LENGTH_SHORT).show();
         }
     }
 }
