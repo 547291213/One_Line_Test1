@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.xkfeng.one_line_test1.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/BtnId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ButtonClick"
+            android:text="百度一下"
+
+            />
+        <Button
+            android:id="@+id/BtnId2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="NextAct"
+            android:text="下一個程序"
+            />
+        <Button
+            android:id="@+id/PercentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Percent"
+            android:text="Percent"
+            />
+        <Button
+            android:id="@+id/ListViewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ListView"
+            android:textSize="30dp"
+            android:onClick="ListViewBtn"
+            />
+        <Button
+            android:id="@+id/RecycleViewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RecycleView"
+            android:textSize="30dp"
+            android:onClick="RecycleViewBtn"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle"
+            android:text="Hello World!" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fragment"
+            android:onClick="FramgementChange"
+            />
+        <FrameLayout
+            android:id="@+id/fragmeLayoutId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+        </FrameLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="VisualFragment"
+            android:text="多页"
+            />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

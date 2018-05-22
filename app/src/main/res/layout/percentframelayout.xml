@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/percentBtn"
+        app:layout_heightPercent="30%"
+        app:layout_widthPercent="70%"
+        android:text="diyigeButtom"
+        android:textSize="30dp"
+        />
+
+    <Button
+        android:id="@+id/percentBtn2"
+        app:layout_marginLeftPercent="70%"
+        app:layout_heightPercent="30%"
+        app:layout_widthPercent="30%"
+        android:text="dierge"
+        />
+    <Button
+        android:id="@+id/percentBtn3"
+        android:text="thrid"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="30%"
+        app:layout_marginTopPercent="30%"
+        />
+    <Button
+        android:id="@+id/percentBtn4"
+        android:text="fourth"
+        app:layout_widthPercent="30%"
+        app:layout_heightPercent="40%"
+        app:layout_marginTopPercent="60%"
+        />
+    <Button
+        android:id="@+id/percentBtn5"
+        android:text="fifth"
+        app:layout_widthPercent="70%"
+        app:layout_heightPercent="20%"
+        app:layout_marginTopPercent="60%"
+        app:layout_marginLeftPercent="30%"
+        />
+    <Button
+        android:id="@+id/percentBtn6"
+        android:text="sixth"
+        app:layout_widthPercent="30%"
+        app:layout_heightPercent="20%"
+        app:layout_marginLeftPercent="30%"
+        app:layout_marginTopPercent="80%"
+        />
+    <Button
+        android:id="@+id/percentBtn7"
+        android:text="seventh"
+        app:layout_widthPercent="40%"
+        app:layout_heightPercent="20%"
+        app:layout_marginLeftPercent="60%"
+        app:layout_marginTopPercent="80%"
+        />
+
+
+</android.support.percent.PercentFrameLayout>
