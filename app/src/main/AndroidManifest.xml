@@ -25,6 +25,7 @@
         <activity android:name=".NewsContentActivity"></activity>
         <activity android:name=".NewstTiltleActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".DrawerLayoutActivity" ></activity>
     </application>
 
 </manifest>

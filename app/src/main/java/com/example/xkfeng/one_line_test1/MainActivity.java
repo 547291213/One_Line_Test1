@@ -168,6 +168,13 @@ public class MainActivity extends BaseActivity {
         sendBroadcast(intent);
     }
 
+    public void DrawerClick(View view)
+    {
+        Intent intent = new Intent(MainActivity.this , DrawerLayoutActivity.class) ;
+        startActivity(intent);
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
